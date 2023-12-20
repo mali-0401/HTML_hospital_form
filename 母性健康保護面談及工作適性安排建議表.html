@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>母性健康保護面談及工作適性安排建議表</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+        /* 滑鼠移動顯示灰底 */
+        label>div:not(:has(input[type="checkbox"])):hover {
+            background-color: rgba(225, 225, 225, 0.7);
+        }
+
+        /* checkbox勾選顯示綠底 */
+        label:has(input[type="checkbox"]:checked) {
+            background-color: rgb(227, 251, 227);
+        }
+
+        /* 物理性危害-浮動按鈕-設定 */
+        #area1 {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 295px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 物理性危害-浮動按鈕-文字框動畫 */
+        #area1:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -90px;
+            font-size: 15px;
+            content: "物理性危害";
+        }
+
+        /* 化學性危害-浮動按鈕-設定 */
+        #area2 {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 250px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 化學性危害-浮動按鈕-文字框動畫 */
+        #area2:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -90px;
+            font-size: 15px;
+            content: "化學性危害";
+        }
+
+        /* 生物性危害-浮動按鈕-設定 */
+        #area3 {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 205px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 生物性危害-浮動按鈕-文字框動畫 */
+        #area3:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -90px;
+            font-size: 15px;
+            content: "生物性危害";
+        }
+
+        /* 人因性危害/工作壓力/職場暴力-浮動按鈕-設定 */
+        #area4 {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 160px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 人因性危害/工作壓力/職場暴力-浮動按鈕-文字框動畫 */
+        #area4:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -222px;
+            font-size: 15px;
+            content: "人因性危害/工作壓力/職場暴力";
+        }
+
+        /* 其他-浮動按鈕-設定 */
+        #area5 {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 115px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 其他-浮動按鈕-文字框動畫 */
+        #area5:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -45px;
+            font-size: 15px;
+            content: "其他";
+        }
+
+        /* 回到最上層-浮動按鈕-設定 */
+        #gotop {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 70px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 回到最上層-浮動按鈕-文字框動畫 */
+        #gotop:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -60px;
+            font-size: 15px;
+            content: "最上層";
+        }
+
+        /* 回到最底層-浮動按鈕-設定 */
+        #gobottom {
+            /* display: none; */
+            position: fixed;
+            right: 10px;
+            bottom: 25px;
+            font-size: 20px;
+            z-index: 9999;
+            font-weight: bold;
+        }
+
+        /* 回到最底層-浮動按鈕-文字框動畫 */
+        #gobottom:hover::before {
+            position: absolute;
+            background: #ffffffdf;
+            color: #000000;
+            border-style: solid;
+            border-radius: 15%;
+            border-width: 1px;
+            border-color: blue;
+            padding: 2px;
+            top: 5px;
+            left: -60px;
+            font-size: 15px;
+            content: "最底層";
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- place navbar here -->
+    </header>
+    <main>
+        <form action="" method="post">
+            <div class="container-md">
+                <!-- 物理性危害-浮動按鈕 -->
+                <bottom id="area1">
+                    <button class="btn btn-outline-primary" type="button">物</button>
+                </bottom>
+                <!-- 化學性危害-浮動按鈕 -->
+                <bottom id="area2">
+                    <button class="btn btn-outline-primary" type="button">化</button>
+                </bottom>
+                <!-- 生物性危害-浮動按鈕 -->
+                <bottom id="area3">
+                    <button class="btn btn-outline-primary" type="button">生</button>
+                </bottom>
+                <!-- 人因危害/工作壓力/職場暴力-浮動按鈕 -->
+                <bottom id="area4">
+                    <button class="btn btn-outline-primary" type="button">人</button>
+                </bottom>
+                <!-- 其他-浮動按鈕 -->
+                <bottom id="area5">
+                    <button class="btn btn-outline-primary" type="button">其</button>
+                </bottom>
+                <!-- 回到最上層-浮動按鈕 -->
+                <bottom id="gotop">
+                    <button class="btn btn-outline-primary" type="button">▲</button>
+                </bottom>
+                <!-- 回到最底層-浮動按鈕 -->
+                <bottom id="gobottom">
+                    <button class="btn btn-outline-primary" type="button">▼</button>
+                </bottom>
+
+                <!-- H1標題框 -->
+                <div class="accordion-item text-center">
+                    <h1>
+                        <strong>
+                            振興醫療財團法人振興醫院<br>
+                            母性健康保護面談及工作適性安排建議表</strong>
+                    </h1>
+                </div>
+                <!-- H2小標題框 -->
+                <div class="accordion-item">
+                    <h2>
+                        <em>
+                            (由職業醫學專科醫師或勞工健康服務醫師填寫)
+                        </em>
+                    </h2>
+                </div>
+                <div class="accordion" id="">
+                    <div class="accordion-item container-md">
+                        <!-- 基本資料輸入框 -->
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3 p-0">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" placeholder="姓名">
+                                    <label for="name">姓名：</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3 p-0">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="age" placeholder="年齡">
+                                    <label for="age">年齡(歲)：</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3 p-0">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="position" placeholder="職稱">
+                                    <label for="position">職稱：</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3 p-0">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="unit" placeholder="單位/部門名稱">
+                                    <label for="unit">單位/部門名稱：</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 妊娠資料輸入框 -->
+                        <div class="row">
+                            <label class="col-sm-12 col-lg-6 col-xl-4 p-0">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0 col-1" type="radio" name="radio"
+                                        id="before_production_radio">
+                                    <span>生產前&nbsp;</span>
+                                    <div class="form-floating opacity-25" name="pregnancy_opacity">
+                                        <input type="text" class="form-control" id="pregnancy_week"
+                                            placeholder="妊娠週數(週)" disabled>
+                                        <label for="pregnancy_week">妊娠週數(週)：</label>
+                                    </div>
+                                    <div class="form-floating opacity-25" name="pregnancy_opacity">
+                                        <input type="date" class="form-control" id="pregnancy_duedate" disabled>
+                                        <label for="pregnancy_duedate">預產期：</label>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="col-sm-12 col-lg-6 col-xl-5 p-0">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0 col-1" type="radio" name="radio"
+                                        id="after_production_radio">
+                                    <span>生產後&nbsp;</span>
+                                    <div class="form-floating opacity-25" name="pregnancy_opacity_2">
+                                        <input type="date" class="form-control" id="pregnancy_deliverydate" disabled>
+                                        <label for="pregnancy_deliverydate">分娩後(分娩日期)：</label>
+                                    </div>
+                                    <label>
+                                        <div class="input-group-text opacity-25" name="pregnancy_opacity_2">
+                                            <input class="form-check-input mt-0" type="radio" name="breastfeeding_radio"
+                                                id="pregnancy_breastfeeding" disabled>哺乳
+                                        </div>
+                                    </label>
+                                    <label>
+                                        <div class="input-group-text opacity-25" name="pregnancy_opacity_2">
+                                            <input class="form-check-input mt-0" type="radio" name="breastfeeding_radio"
+                                                id="pregnancy_notbreastfeeding" disabled>未哺乳
+                                        </div>
+                                    </label>
+                                </div>
+                            </label>
+                            <label class="col-sm-12 col-xl-3 p-0 ">
+                                <div class="form-floating input-group-text">
+                                    <select class="form-select" id="risklevel"
+                                        aria-label="Floating label select example">
+                                        <option selected>請選擇...</option>
+                                        <option value="1">第一級</option>
+                                        <option value="2">第二級</option>
+                                        <option value="3">第三級</option>
+                                    </select>
+                                    <label for="risklevel">風險等級為：</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="accordion-header text-center bg-secondary text-bg-danger">
+                        工作適性建議表
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapse-1" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapse-1" id="button-collapse-1">
+                                <strong>物理性危害</strong>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapse-1" class="accordion-collapse collapse show">
+                            <div class="accordion-body row">
+                                <div class="col-sm-12 col-md-5 col-lg-5  p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    危害項目
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_1">
+                                                        <div class="col-11 d-inline-block">游離輻射</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_2">
+                                                        <div class="col-11 d-inline-block">噪音TWA >= 85分貝</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_3">
+                                                        <div class="col-11 d-inline-block">
+                                                            衝擊(shock)、振動(vibration)或移動(movement)</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_4">
+                                                        <div class="col-11 d-inline-block">非游離輻射(如電磁輻射)</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_5">
+                                                        <div class="col-11 d-inline-block">高溫作業</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_6">
+                                                        <div class="col-11 d-inline-block">異常氣壓</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_7">
+                                                        <div class="col-11 d-inline-block">低溫或氣溫明顯變動之作業</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_8">
+                                                        <div class="col-11 d-inline-block">電擊</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_9">
+                                                        <div class="col-11 d-inline-block">滑倒、絆倒或跌倒</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_10">
+                                                        <div class="col-11 d-inline-block">其他：(得依單位實際狀況增列評估項目)
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="physical_hazard_10_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-12 p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    工作改善及預防
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="border list-group-item-info">1. 工作環境</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_1-1">
+                                                        <div class="col-11 d-inline-block">提供適當防護具</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_1-2">
+                                                        <div class="col-11 d-inline-block">管制暴露量及時間</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_1-3">
+                                                        <div class="col-11 d-inline-block">調整工作環境(包括空間、照明、電腦桌椅等)</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">2. 工時調整</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_2-1">
+                                                        <div class="col-11 d-inline-block">增加休息時間及頻率</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_2-2">
+                                                        <div class="col-11 d-inline-block">調整輪班及班別時間</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">3. 其他預防措施</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_3-1">
+                                                        <div class="col-11 d-inline-block">告知勞工其作業之危害及預防</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_3-2">
+                                                        <div class="col-11 d-inline-block">禁止此作業</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">4. 職務內容</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_4-1">
+                                                        <div class="col-11 d-inline-block">調整：
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="physical_hazard_4-1_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="physical_hazard_4-2">
+                                                        <div class="col-11 d-inline-block">休假：<br>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="physical_hazard_4-2_date1">
+                                                            <span class="d-none" id="physical_hazard_4-2_span">至</span>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="physical_hazard_4-2_date2">
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapse-2" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapse-2" id="button-collapse-2">
+                                <strong>化學性危害</strong>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapse-2" class="accordion-collapse show">
+                            <div class="accordion-body row">
+                                <div class="col-sm-12 col-md-5 col-lg-5  p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    危害項目
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_1">
+                                                        <div class="col-11 d-inline-block">
+                                                            生殖毒性第一級之物質<br>(除職安法第30條第1項第5款之化學品外，可參閱附錄一)</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_2">
+                                                        <div class="col-11 d-inline-block">
+                                                            生殖細胞致突變第一級之物質<br>(除職安法第30條第1項第5款之化學品外，可參閱附錄一)</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_3">
+                                                        <div class="col-11 d-inline-block">
+                                                            抗細胞分裂(antimitotic)或具細胞毒性(cytotoxic)之藥物</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_4">
+                                                        <div class="col-11 d-inline-block">對哺乳功能有不良影響之物質</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_5">
+                                                        <div class="col-11 d-inline-block">可經皮膚吸收之毒性化學物質，包括某些殺蟲劑</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_6">
+                                                        <div class="col-11 d-inline-block">一氧化炭或其它窒息性氣體之空間</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_7">
+                                                        <div class="col-11 d-inline-block">其他：(得依單位實際狀況增列評估項目)
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="chemical_hazard_7_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-12 p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    工作改善及預防
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="border list-group-item-info">1. 工作環境</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_1-1">
+                                                        <div class="col-11 d-inline-block">調整工作環境(如通氣設備)</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_1-2">
+                                                        <div class="col-11 d-inline-block">提供適當防護衣及防護具</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_1-3">
+                                                        <div class="col-11 d-inline-block">管制暴露量及時間</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">2. 工時調整</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_2-1">
+                                                        <div class="col-11 d-inline-block">增加休息時間及頻率</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_2-2">
+                                                        <div class="col-11 d-inline-block">調整輪班及班別時間</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">3. 其他預防措施</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_3-1">
+                                                        <div class="col-11 d-inline-block">告知勞工其作業之危害及預防</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_3-2">
+                                                        <div class="col-11 d-inline-block">禁止此作業</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">4. 職務內容</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_4-1">
+                                                        <div class="col-11 d-inline-block">調整：
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="chemical_hazard_4-1_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="chemical_hazard_4-2">
+                                                        <div class="col-11 d-inline-block">休假：<br>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="chemical_hazard_4-2_date1">
+                                                            <span class="d-none">至</span>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="chemical_hazard_4-2_date2">
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapse-3" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapse-3" id="button-collapse-3">
+                                <strong>生物性危害</strong>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapse-3" class="accordion-collapse show">
+                            <div class="accordion-body row">
+                                <div class="col-sm-12 col-md-5 col-lg-5  p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    危害項目
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_1">
+                                                        <div class="col-11 d-inline-block">弓形蟲</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_2">
+                                                        <div class="col-11 d-inline-block">德國麻疹</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_3">
+                                                        <div class="col-11 d-inline-block">
+                                                            具有致病或致死之微生物：如B型肝炎或水痘、C型肝炎或人類免疫缺乏病毒、或肺結核</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_4">
+                                                        <div class="col-11 d-inline-block">其他：(得依單位實際狀況增列評估項目)
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="biological_hazard_4_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-12 p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    工作改善及預防
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="border list-group-item-info">1. 工作環境</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_1-1">
+                                                        <div class="col-11 d-inline-block">調整工作環境</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_1-2">
+                                                        <div class="col-11 d-inline-block">提供清潔設備</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_1-3">
+                                                        <div class="col-11 d-inline-block">提供適量防護衣及防護具</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">2. 其他預防措施</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_2-1">
+                                                        <div class="col-11 d-inline-block">告知懷孕工作者其作業之危害及預防</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_2-2">
+                                                        <div class="col-11 d-inline-block">禁止此作業</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">3. 職務內容</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_3-1">
+                                                        <div class="col-11 d-inline-block">調整：
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="biological_hazard_3-1_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="biological_hazard_3-2">
+                                                        <div class="col-11 d-inline-block">休假：<br>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="biological_hazard_3-2_date1"><span
+                                                                class="d-none">至</span>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="biological_hazard_3-2_date2">
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapse-4" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapse-4" id="button-collapse-4">
+                                <strong>人因性危害/工作壓力/職場暴力</strong>
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapse-4" class="accordion-collapse show">
+                            <div class="accordion-body row">
+                                <div class="col-sm-12 col-md-5 col-lg-5  p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    危害項目
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <b><span class="border">人因危害性</span></b>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_1">
+                                                        <div class="col-11 d-inline-block">人工重物處理</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_2">
+                                                        <div class="col-11 d-inline-block">空間狹小</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_3">
+                                                        <div class="col-11 d-inline-block">動作(movement)或姿勢</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_4">
+                                                        <div class="col-11 d-inline-block">工作之儀器設備操作(如終端機或工作站監視...等)
+                                                        </div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_5">
+                                                        <div class="col-11 d-inline-block">其他：(得依單位實際狀況增列評估項目)
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="human-work_hazard_5_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                    <b><span class="border">工作壓力/職場暴力</span></b>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_6">
+                                                        <div class="col-11 d-inline-block">工作壓力</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_7">
+                                                        <div class="col-11 d-inline-block">職場暴力</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_8">
+                                                        <div class="col-11 d-inline-block">其他：(得依單位實際狀況增列評估項目)
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="human-work_hazard_8_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-12 p-0">
+                                    <table class="table table-bordered">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th class="text-center">
+                                                    工作改善及預防
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="border list-group-item-info">1. 工作環境</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_1-1">
+                                                        <div class="col-11 d-inline-block">調整工作環境(包括空間、照明、電腦桌椅等)</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_1-2">
+                                                        <div class="col-11 d-inline-block">提供適當的座位</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_1-3">
+                                                        <div class="col-11 d-inline-block">提供寬敞環境可經常活動</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_1-4">
+                                                        <div class="col-11 d-inline-block">避免獨立作業</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">2. 工時調整</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_2-1">
+                                                        <div class="col-11 d-inline-block">增加休息時間及頻率</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_2-2">
+                                                        <div class="col-11 d-inline-block">調整輪班及班別時間</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">3. 其他預防措施</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_3-1">
+                                                        <div class="col-11 d-inline-block">告知勞工其作業之危害及預防</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_3-2">
+                                                        <div class="col-11 d-inline-block">壓力諮詢或管理</div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_3-3">
+                                                        <div class="col-11 d-inline-block">禁止此作業</div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">4. 職務內容</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_4-1">
+                                                        <div class="col-11 d-inline-block">調整：
+                                                            <textarea class="col-11 form-control d-none" rows="1"
+                                                                id="human-work_hazard_4-1_text"></textarea>
+                                                        </div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_4-2">
+                                                        <div class="col-11 d-inline-block">休假：<br>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="human-work_hazard_4-2_date1"><span
+                                                                class="d-none">至</span>
+                                                            <input type="date" class="form-control-sm d-none"
+                                                                id="human-work_hazard_4-2_date2">
+                                                        </div>
+                                                    </label>
+                                                    <span class="border list-group-item-info">5. 員工關懷</span>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_5-1">
+                                                        <div class="col-11 d-inline-block">接受傳介員工關懷：
+                                                            <textarea class="col-11 form-control" rows="1"
+                                                                id="human-work_hazard_5-1_date"></textarea>
+                                                        </div>
+                                                    </label>
+                                                    <label class="col-12">
+                                                        <input class="form-check-input col-1" type="checkbox"
+                                                            id="human-work_hazard_5-2">
+                                                        <div class="col-11 d-inline-block">拒絕轉介員工關懷：
+                                                            <textarea class="col-11 form-control" rows="1"
+                                                                id="human-work_hazard_5-2_date"></textarea>
+                                                        </div>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapse-5" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapse-5" id="buton-collapse-5">
+                                    <strong>其他</strong>
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapse-5" class="accordion-collapse show">
+                                <div class="accordion-body row">
+                                    <div class="col-sm-12 col-md-5 col-lg-5  p-0">
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="text-center">
+                                                        危害項目
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1">
+                                                            <div class="col-11 d-inline-block">工作時間</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_2">
+                                                            <div class="col-11 d-inline-block">工作姿勢(久站或久坐..等)</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_3">
+                                                            <div class="col-11 d-inline-block">個人防護具或制服之穿戴</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_4">
+                                                            <div class="col-11 d-inline-block">如廁、進食、飲水或休憩地點便利性不足</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_5">
+                                                            <div class="col-11 d-inline-block">未設置哺乳室</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_6">
+                                                            <div class="col-11 d-inline-block">其他：(得依單位實際狀況增列評估項目)
+                                                                <textarea class="col-11 form-control d-none" rows="1"
+                                                                    id="other_6_text"></textarea>
+                                                            </div>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-12 p-0">
+                                        <table class="table table-bordered">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="text-center">
+                                                        工作改善及預防
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <span class="border list-group-item-info">1. 工作環境</span>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-1">
+                                                            <div class="col-11 d-inline-block">調整工作環境</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-2">
+                                                            <div class="col-11 d-inline-block">提供適當的座位</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-3">
+                                                            <div class="col-11 d-inline-block">提供寬敞環境可經常活動</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-4">
+                                                            <div class="col-11 d-inline-block">提供哺集乳室</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-5">
+                                                            <div class="col-11 d-inline-block">提供臨近浴廁</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-6">
+                                                            <div class="col-11 d-inline-block">提供適量防護衣及防護具</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_1-7">
+                                                            <div class="col-11 d-inline-block">避免獨立作業</div>
+                                                        </label>
+                                                        <span class="border list-group-item-info">2. 工時調整</span>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_2-1">
+                                                            <div class="col-11 d-inline-block">增加休息時間及頻率</div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_2-2">
+                                                            <div class="col-11 d-inline-block">調整輪班及班別時間</div>
+                                                        </label>
+                                                        <span class="border list-group-item-info">3. 職務內容</span>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_3-1">
+                                                            <div class="col-11 d-inline-block">調整：
+                                                                <textarea class="col-11 form-control d-none" rows="1"
+                                                                    id="other_3-1_text"></textarea>
+                                                            </div>
+                                                        </label>
+                                                        <label class="col-12">
+                                                            <input class="form-check-input col-1" type="checkbox"
+                                                                id="other_3-2">
+                                                            <div class="col-11 d-inline-block">休假：<br>
+                                                                <input type="date" class="form-control-sm d-none"
+                                                                    id="other_3-2_date1"><span class="d-none">至</span>
+                                                                <input type="date" class="form-control-sm d-none"
+                                                                    id="other_3-2_date2">
+                                                            </div>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-header text-center bg-secondary text-bg-danger">
+                            面談指導及工作適性安排意願
+                        </div>
+                        <div class="accordion-body">
+                            本人<input type="text" class="form-control-sm opacity-25" id="interview_people" disabled>
+                            已於<input type="date" class="form-control-sm" id="interview_date">
+                            與<input type="text" class="form-control-sm opacity-25" id="interview_interviewer"
+                                disabled>面談，
+                            並已清楚所處作業環境對健康之影響，及醫院所採取之措施，本人同意接受下述之建議：<br>
+                            <label><input type="checkbox" class="form-check-input"
+                                    id="interview_check1"><b>維持原工作</b></label>
+                            <label><input type="checkbox" class="form-check-input"
+                                    id="interview_check2"><b>調整職務</b></label>
+                            <label><input type="checkbox" class="form-check-input"
+                                    id="interview_check3"><b>調整工作時間</b></label>
+                            <label><input type="checkbox" class="form-check-input"
+                                    id="interview_check4"><b>變更工作場所</b></label>
+                            <label><input type="checkbox" class="form-check-input"
+                                    id="interview_check5"><b>其他：</b></label>
+                            <textarea class="form-control" id="interview_check5_text"></textarea>
+                            勞工簽名：<input type="text" class="form-control-sm opacity-25" id="interview_sign" disabled>
+                        </div>
+                    </div>
+                    <center>
+                        <table>
+                            <tr>
+                                <td>
+                                    面談醫師(含醫師字號)：<input type="text" class="col-5" id="interview_under_doctor_no"
+                                        disabled>
+                                    <input type="text" class="form-control opacity-25" disabled>
+                                </td>
+                                <td class="w-25">
+                                    評估日期：<input type="date" class="form-control" id="interview_under_doctor_date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    單位主管簽名：
+                                    <input type="text" class="form-control opacity-25" disabled
+                                        id="interview_under_director">
+                                </td>
+                                <td>
+                                    日期：<input type="date" class="form-control" id="interview_under_director_date">
+                                </td>
+                            </tr>
+                        </table>
+                    </center>
+                    <div class="accordion-body text-center">
+                        <input type="submit" class="btn btn-success" value="提交" id="btn_submit">
+                        <input type="reset" class="btn btn-secondary" value="重置" id="btn_reset">
+                    </div>
+                </div>
+        </form>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+        $(function () {
+            // 物理性危害-跳轉
+            $("#area1").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: $("#panelsStayOpen-collapse-1").offset().top - 60
+                    }, 0);
+                }
+            )
+            // 化學性危害-跳轉
+            $("#area2").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: $("#panelsStayOpen-collapse-2").offset().top - 60
+                    }, 0);
+                }
+            )
+            // 生物性危害-跳轉
+            $("#area3").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: $("#panelsStayOpen-collapse-3").offset().top - 60
+                    }, 0);
+                }
+            )
+            // 人因性危害/工作壓力/職場暴力-跳轉
+            $("#area4").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: $("#panelsStayOpen-collapse-4").offset().top - 60
+                    }, 0);
+                }
+            )
+            // 其他-跳轉
+            $("#area5").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: $("#panelsStayOpen-collapse-5").offset().top - 60
+                    }, 0);
+                }
+            )
+            // 最上層-跳轉
+            $("#gotop").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: 0
+                    }, 0);
+                }
+            );
+            // 最底層-跳轉
+            $("#gobottom").click(
+                function () {
+                    jQuery("html,body").animate({
+                        scrollTop: $(document).height()
+                    }, 0);
+                }
+            );
+            // 生產前後radio顯示隱藏判斷
+            $("#before_production_radio").click( //生產前
+                function () {
+                    $("[name='pregnancy_opacity']").removeClass("opacity-25")
+                    $("[name='pregnancy_opacity_2']").addClass("opacity-25")
+                    $("#pregnancy_week").prop({ disabled: false });
+                    $("#pregnancy_duedate").prop({ disabled: false });
+                    $("#pregnancy_deliverydate").prop({ disabled: true }).val('');
+                    $("#pregnancy_breastfeeding").prop({ disabled: true }).prop({ checked: false });
+                    $("#pregnancy_notbreastfeeding").prop({ disabled: true }).prop({ checked: false });
+                }
+            )
+            $("#after_production_radio").click( //生產後
+                function () {
+                    $("[name='pregnancy_opacity']").addClass("opacity-25")
+                    $("[name='pregnancy_opacity_2']").removeClass("opacity-25")
+                    $("#pregnancy_week").prop({ disabled: true }).val('');
+                    $("#pregnancy_duedate").prop({ disabled: true }).val('');
+                    $("#pregnancy_deliverydate").prop({ disabled: false });
+                    $("#pregnancy_breastfeeding").prop({ disabled: false });
+                    $("#pregnancy_notbreastfeeding").prop({ disabled: false });
+                }
+            )
+            // 其他、調整、休假輸入框隱藏開啟邏輯
+            $("#physical_hazard_10").click(
+                function () {
+                    if ($('#physical_hazard_10').is(':checked')) {
+                        $("#physical_hazard_10_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#physical_hazard_10_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#physical_hazard_4-1").click(
+                function () {
+                    if ($('#physical_hazard_4-1').is(':checked')) {
+                        $("#physical_hazard_4-1_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#physical_hazard_4-1_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#physical_hazard_4-2").click(
+                function () {
+                    if ($('#physical_hazard_4-2').is(':checked')) {
+                        $("#physical_hazard_4-2_date1").removeClass("d-none");
+                        $("#physical_hazard_4-2_span").removeClass("d-none");
+                        $("#physical_hazard_4-2_date2").removeClass("d-none");
+                    }
+                    else {
+                        $("#physical_hazard_4-2_date1").addClass("d-none");
+                        $("#physical_hazard_4-2_span").addClass("d-none");
+                        $("#physical_hazard_4-2_date2").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#chemical_hazard_7").click(
+                function () {
+                    if ($('#chemical_hazard_7').is(':checked')) {
+                        $("#chemical_hazard_7_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#chemical_hazard_7_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#chemical_hazard_4-1").click(
+                function () {
+                    if ($('#chemical_hazard_4-1').is(':checked')) {
+                        $("#chemical_hazard_4-1_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#chemical_hazard_4-1_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#chemical_hazard_4-2").click(
+                function () {
+                    if ($('#chemical_hazard_4-2').is(':checked')) {
+                        $("#chemical_hazard_4-2_date1").removeClass("d-none");
+                        $("#chemical_hazard_4-2_span").removeClass("d-none");
+                        $("#chemical_hazard_4-2_date2").removeClass("d-none");
+                    }
+                    else {
+                        $("#chemical_hazard_4-2_date1").addClass("d-none");
+                        $("#chemical_hazard_4-2_span").addClass("d-none");
+                        $("#chemical_hazard_4-2_date2").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#biological_hazard_4").click(
+                function () {
+                    if ($('#biological_hazard_4').is(':checked')) {
+                        $("#biological_hazard_4_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#biological_hazard_4_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#biological_hazard_3-1").click(
+                function () {
+                    if ($('#biological_hazard_3-1').is(':checked')) {
+                        $("#biological_hazard_3-1_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#biological_hazard_3-1_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#biological_hazard_3-2").click(
+                function () {
+                    if ($('#biological_hazard_3-2').is(':checked')) {
+                        $("#biological_hazard_3-2_date1").removeClass("d-none");
+                        $("#biological_hazard_3-2_span").removeClass("d-none");
+                        $("#biological_hazard_3-2_date2").removeClass("d-none");
+                    }
+                    else {
+                        $("#biological_hazard_3-2_date1").addClass("d-none");
+                        $("#biological_hazard_3-2_span").addClass("d-none");
+                        $("#biological_hazard_3-2_date2").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#human-work_hazard_5").click(
+                function () {
+                    if ($('#human-work_hazard_5').is(':checked')) {
+                        $("#human-work_hazard_5_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#human-work_hazard_5_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#human-work_hazard_8").click(
+                function () {
+                    if ($('#human-work_hazard_8').is(':checked')) {
+                        $("#human-work_hazard_8_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#human-work_hazard_8_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#human-work_hazard_4-1").click(
+                function () {
+                    if ($('#human-work_hazard_4-1').is(':checked')) {
+                        $("#human-work_hazard_4-1_text").removeClass("d-none");
+                    }
+                    else {
+                        $("#human-work_hazard_4-1_text").addClass("d-none");
+                    }                    
+                }
+            )
+            $("#human-work_hazard_4-2").click(
+                function () {
+                    if ($('#human-work_hazard_4-2').is(':checked')) {
+                        $("#human-work_hazard_4-2_date1").removeClass("d-none");
+                        $("#biological_hazard_3-2_span").removeClass("d-none");
+                        $("#biological_hazard_3-2_date2").removeClass("d-none");
+                    }
+                    else {
+                        $("#biological_hazard_3-2_date1").addClass("d-none");
+                        $("#biological_hazard_3-2_span").addClass("d-none");
+                        $("#biological_hazard_3-2_date2").addClass("d-none");
+                    }                    
+                }
+            )
+
+        });
+    </script>
+</body>
+
+</html>
